@@ -32,13 +32,23 @@ def searchfiles(outFileName, extension='.ttf', folder='C:\\', deltaTime=3600 * 2
 
 searchfiles("C:\\test\\outfile.dat", ".txt", "C:\\test", 2000 * 60)
 
-def filePattern(fname,list):
-   """
+
+def filePattern(fname,lis):
+  """
     ***************************
     Adott filename és minta illeszkedését viszgálja. ha a minta illeszkedik, a visszaadott érték a 
     ***************************
     :param fname:           a file neve, STR
-    :param list:           az illesztendő minta, 
+    :param list:            az illesztendő minta, 
     :return:                ---
-    """
-    
+  """
+  for index in lis:
+    print(index)
+    if fname.find(index)>0:
+      return (lis[index])
+
+
+li={"alma":"A1","dio":"A2","korte":"A3"}
+fname="sdioaas"
+out=filePattern(fname,li)
+print(f"output={out}")
