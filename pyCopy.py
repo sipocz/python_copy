@@ -98,5 +98,6 @@ def loadCSVfile(fname):
 #printCSV(a, "C:/test/aaa.txt")
 Ldim=loadCSVfile("C:/test/aaa.txt")
 print(Ldim)
+printCSV(Ldim,"C:/test/aaa2.txt")
 #test alfa
 
