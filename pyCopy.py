@@ -58,7 +58,7 @@ print(f"output={out}")
 # shutil.copy("c:\\test\\SRC\\txtfile.txt","c:\\test\\"+out+"\\almafa.txt")
 
 def parseCSV(str):
-    a = str.split(";")
+    a = str.strip().split(";")
     return (a)
 
 
@@ -82,11 +82,21 @@ def printCSV(a, fname):
         for j in i:
             s = s + str(j) + ";"
 
-        print(s[0:-1])
+        #print(s[0:-1])
         csvfile.writelines(s[0:-1] + "\n")
     csvfile.close()
 
+def loadCSVfile(fname):
+    l1=[]
+    csvfile = open(fname, "r")
+    for line in csvfile.readlines():
+        #print(line)
+        l1.append(parseCSV(line))
+        print("aa",l1)
+    return (l1)
 
-printCSV(a, "C:/test/csv1.txt")
+#printCSV(a, "C:/test/aaa.txt")
+Ldim=loadCSVfile("C:/test/aaa.txt")
+print(Ldim)
 #test alfa
 
